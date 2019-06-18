@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Movie Info</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
+          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+
+    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+
+                <!--/*@thymesVar id="movie" type="jannkasper.omdb.domain.Movie"*/-->
+                <div class="panel-heading">
+                    <h1 class="panel-title" th:text="${(movie.title) + ' from IMDb API'}">Movie from API</h1>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Title:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${(movie.title)}">title</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Year:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.year}">year</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Rated:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.rated}">rated</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Released:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.released}">released</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Runtime:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.runtime}">runtime</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Genre:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.genre}">genre</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Director:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.director}">director</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Writer:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.writer}">writer</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Actors:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.actors}">actors</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Plot:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.plot}">plot</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Language:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.language}">language</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Country:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.country}">country</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Awards:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.awards}">awards</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Poster:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.poster}">poster</p>
+                        </div>
+                    </div>
+
+
+                    <!--<div class="row">-->
+                        <!--<div class="col-md-3">-->
+                            <!--<h5>Ratings:</h5>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-3">-->
+                            <!--<p th:text="${movie.ratings}">ratings</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Metascore:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.metascore}">metascore</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>IMDb rating:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.imdbRating}">imdbrating</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>IMDb votes:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.imdbVotes}">imdbvotes</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>IMDb ID:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.imdbID}">imdbid</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Type:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.type}">type</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>DVD:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.DVD}">dvd</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Box Office:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.boxOffice}">boxoffice</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Production:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.production}">production</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Response:</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <p th:text="${movie.response}">response</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
