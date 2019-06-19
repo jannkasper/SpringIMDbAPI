@@ -1,37 +1,38 @@
-<!DOCTYPE html>
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Users</title>
+    <title>Movies by IMDb API</title>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
-          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
 
-    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+    <!--<script src="/webjars/jquery/1.11.1/jquery.min.js"></script>-->
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"-->
+    <!--integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"-->
+    <!--crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>-->
+    <link href="/stylesheet.css" rel="stylesheet">
 </head>
 <body>
 <!--/*@thymesVar id="listMovie" type="java.util.List"*/-->
 <!--/*@thymesVar id="movie" type="jannkasper.omdb.domain.Search"*/-->
 <div class="container-fluid" style="margin-top: 20px">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+    <div class="row justify-content-center" >
+        <div class="col-12 col-md-10 col-lg-8">
             <div class="panel panel-primary">
 
                 <div class="panel-heading">
-                    <h1 class="panel-title">Movies from IMDb API</h1>
+                    <h1 class="btn btn-lg btn-success disabled">Movies by IMDb API</h1>
                 </div>
-                <div class="panel-body">
+                <div class="card card-sm">
                     <div class="table-responsive" th:if="${not #lists.isEmpty(listMovie)}">
                         <table class="table table-hover ">
                             <thead class="thead-inverse">
-                            <tr>
+                            <tr align="center">
                                 <th>Title</th>
                                 <th>Year</th>
                                 <th>imdbID</th>
@@ -39,19 +40,19 @@
                                 <th>Details</th>
                             </tr>
                             </thead>
-                            <tr th:remove="all">
+                            <tr align="center" th:remove="all">
                                 <td>title</td>
                                 <td>year</td>
-                                <td>imdbdi</td>
+                                <td>imdbid</td>
                                 <td>type</td>
                                 <td>details</td>
                             </tr>
-                            <tr th:each="movie : ${listMovie}">
+                            <tr align="center" th:each="movie : ${listMovie}">
                                 <td th:text="${movie.title}">title</td>
                                 <td th:text="${movie.year}">year</td>
                                 <td th:text="${movie.imdbID}">imdbid</td>
                                 <td th:text="${movie.type}">type</td>
-                                <td><a href="#" th:href="@{'/movie/' + ${movie.imdbID}}">details</a></td>
+                                <td><a class="btn btn-sm btn-success" href="#" th:href="@{'/movie/' + ${movie.imdbID}}">details</a></td>
                             </tr>
                         </table>
                     </div>

@@ -1,41 +1,46 @@
-<!DOCTYPE html>
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Get Users</title>
+    <title>Movies by IMDb API</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
-          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
 
-    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+    <!--<script src="/webjars/jquery/1.11.1/jquery.min.js"></script>-->
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"-->
+            <!--integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"-->
+            <!--crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>-->
+    <link href="/stylesheet.css" rel="stylesheet">
 </head>
-<body>
-<div class="container-fluid" style="margin-top: 20px">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <form  th:action="@{/search}" method="post">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-4 form-group">
-                            <label>Search for your favorite movie:</label>
-                            <input id="text" name="text" type="text" class="form-control" placeholder="Search title"/>
 
-                        </div>
+<body>
+<div class="container">
+    <br/>
+    <div class="row justify-content-center"  style="padding: 10% 0;">
+        <div class="col-12 col-md-10 col-lg-8">
+            <form class="card card-sm" th:action="@{/search}" method="post">
+                <div class="card-body row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fas fa-search h4 text-body"></i>
                     </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
+                    <!--end of col-->
+                    <div class="col">
+                        <input id="text" name="text" type="text" class="form-control form-control-lg form-control-borderless" placeholder="Search your favorite movie by title or keywords"/>
                     </div>
+                    <!--end of col-->
+                    <div class="col-auto">
+                        <button class="btn btn-lg btn-success" type="submit">Search</button>
+                    </div>
+                    <!--end of col-->
                 </div>
             </form>
         </div>
+        <!--end of col-->
     </div>
 </div>
 </body>
